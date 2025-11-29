@@ -66,7 +66,7 @@ export default function Home() {
         </div>
       </Reveal>
 
-      <div className='flex w-screen h-full flex-col bg-[#f3e4f0] md:gap-[100px]'>
+      <div className='flex w-screen h-full flex-col bg-[#f3e4f0] gap-[20px] md:gap-[100px]'>
         
         {/* About Section */}
         <div id="about" className="flex w-full h-screen bg-[#f3e4f0] text-[#28082c] justify-center items-center">

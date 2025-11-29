@@ -63,7 +63,7 @@ export default function Navbar() {
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: showNav ? 0 : -100, opacity: showNav ? 1 : 0 }}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="fixed top-0 left-0 right-0 font-erbar flex items-center justify-between w-full h-24 px-6 sm:px-16 lg:px-[200px] bg-[#28082c] z-50 shadow-lg"
+      className="fixed top-0 left-0 right-0 font-erbar flex items-center justify-between w-full h-18 md:h-24 px-6 sm:px-16 lg:px-[200px] bg-[#28082c] z-50 shadow-lg"
     >
       {/* Logo */}
       <Link href="/">
@@ -72,7 +72,7 @@ export default function Navbar() {
           alt="Logo"
           width={80}
           height={50}
-          className="cursor-pointer"
+          className="cursor-pointer h-12 w-auto md:h-20"
         />
       </Link>
 
