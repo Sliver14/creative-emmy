@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// First font
+const erbar = localFont({
+  src: [
+    { path: "../public/fonts/fonnts.com-ERBAR-W01-LIGHT.ttf", weight: "400" },
+    { path: "../public/fonts/fonnts.com-ERBAR-W01-LIGHT.ttf", weight: "700" },
+  ],
+  variable: "--font-erbar",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Second font
+const museo = localFont({
+  src: [
+    { path: "../public/fonts/Museo700-Regular.otf", weight: "400" },
+    { path: "../public/fonts/Museo700-Regular.otf", weight: "600" },
+  ],
+  variable: "--font-museo",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +33,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${erbar.variable} ${museo.variable} antialiased`}
+        
       >
         {children}
       </body>
