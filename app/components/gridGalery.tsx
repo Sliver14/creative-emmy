@@ -61,8 +61,8 @@ export default function GallerySection() {
             className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-medium transition-all
               ${
                 active === cat
-                  ? "bg-[#28082c] text-[#f3e4f0]"
-                  : "bg-[#e3cdda] text-[#28082c] hover:bg-[#d9c1cf]"
+                  ? "bg-[#5c0d67] text-[#f3e4f0]"
+                  : "bg-[#e3cdda] text-[#5c0d67] hover:bg-[#d9c1cf]"
               }`}
           >
             {cat.charAt(0).toUpperCase() + cat.slice(1)}

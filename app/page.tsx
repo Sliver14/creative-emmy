@@ -66,7 +66,7 @@ export default function Home() {
         </div>
       </Reveal>
 
-      <div className='flex w-screen h-full flex-col bg-[#f3e4f0] gap-[100px]'>
+      <div className='flex w-screen h-full flex-col bg-[#f3e4f0] md:gap-[100px]'>
         
         {/* About Section */}
         <div id="about" className="flex w-full h-screen bg-[#f3e4f0] text-[#28082c] justify-center items-center">
@@ -99,7 +99,7 @@ export default function Home() {
               </Reveal>
 
               <Reveal>
-                <p className="text-sm sm:text-base md:text-lg font-light leading-relaxed md:leading-loose">
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed md:leading-loose">
                   Creative Emmy is a leading design studio specializing in delivering high-quality
                   branding, print, and digital solutions. Our mission is to bring your vision to life
                   with creativity, precision, and innovation. From logos and marketing materials to

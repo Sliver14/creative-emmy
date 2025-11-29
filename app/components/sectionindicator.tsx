@@ -122,8 +122,8 @@ export default function SectionIndicator({
           className={`
             w-3 h-3 lg:w-4 lg:h-4 rounded-full border-2 transition-all
             ${active === i ? "scale-125" : "scale-100"}
-            ${isLight ? "border-white" : "border-[#28082c]"}
-            ${active === i ? (isLight ? "bg-white" : "bg-[#28082c]") : "bg-transparent"}
+            ${isLight ? "border-white" : "border-[#ff8740]"}
+            ${active === i ? (isLight ? "bg-white" : "bg-[#ff8740]") : "bg-transparent"}
           `}
           aria-label={`Go to ${sections[i]}`}
         />
