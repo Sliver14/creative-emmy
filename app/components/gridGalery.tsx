@@ -100,11 +100,11 @@ export default function GallerySection() {
       </div>
 
       <div className="flex items-center justify-center ">
-        <div 
+        <button 
           onClick={() => router.push("/projects")} 
           className="bg-[#5c0d67] w-auto text-[#f3e4f0] px-6 py-3 md:px-8 md:py-4 text-lg sm:text-xl cursor-pointer rounded-full font-semibold hover:bg-[#5c0d67]/90 transition-all duration-300">
           View all Projects
-        </div>
+        </button>
       </div>
       
     </div>
