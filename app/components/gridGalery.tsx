@@ -1,13 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useState } from "react";
+
+// ------------------------------------
+// Types
+// ------------------------------------
+interface GalleryImage {
+  src: string;
+  category: "branding" | "graphics" | "logo";
+}
 
 // ------------------------------------
 // Image Data
 // ------------------------------------
-const images = [
+const images: GalleryImage[] = [
   { src: "/insight demoresources/67858a93f83a54737c833bb7_img_services1-ezgif.com-avif-to-jpg-converter.jpg", category: "branding" },
   { src: "/insight demoresources/67c8aaf35fa470c9471c85ba_67c49ff00bb6ac91e819f42e_Zight20at20PM-ezgif.com-avif-to-jpg-converter.jpg", category: "graphics" },
   { src: "/insight demoresources/67c8aaf35fa470c9471c8604_67c49910213fd2040fc872e4_Air-Chesky1.jpg", category: "logo" },
@@ -21,19 +29,19 @@ const images = [
 // ------------------------------------
 // Animation Variants
 // ------------------------------------
-const imageVariants = {
+const imageVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0, 0, 0.58, 1] } },
 };
 
+type Category = "all" | "branding" | "graphics" | "logo";
+
 export default function GallerySection() {
-  const categories = ["all", "logo", "graphics", "branding"];
-  const [active, setActive] = useState("all");
+  const categories: Category[] = ["all", "logo", "graphics", "branding"];
+  const [active, setActive] = useState<Category>("all");
 
   const filteredImages =
-    active === "all"
-      ? images
-      : images.filter((img) => img.category === active);
+    active === "all" ? images : images.filter((img) => img.category === active);
 
   return (
     <div className="w-full bg-[#f3e4f0] py-12 sm:py-16 md:py-20">

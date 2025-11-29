@@ -1,9 +1,6 @@
-// components/AutoReveal.tsx
 "use client";
-import React from "react";
-
+import React, { ReactNode, isValidElement, cloneElement } from "react";
 import Reveal from "./reveal";
-import { ReactNode, isValidElement, cloneElement } from "react";
 
 interface AutoRevealProps {
   children: ReactNode;
@@ -11,17 +8,20 @@ interface AutoRevealProps {
 
 export default function AutoReveal({ children }: AutoRevealProps) {
   const wrapChild = (child: ReactNode): ReactNode => {
-    if (!isValidElement(child)) return child; // ignore text nodes
+    if (!isValidElement(child)) return child;
 
-    // If the child has its own children, recursively wrap them
-    const newChildren = child.props.children
-      ? React.Children.map(child.props.children, wrapChild)
-      : child.props.children;
+    // Narrow element so TS knows about props + children
+    const element = child as React.ReactElement<{ children?: ReactNode }>;
 
-    // Clone element with wrapped children
-    const cloned = cloneElement(child, { ...child.props, children: newChildren });
+    const newChildren = element.props.children
+      ? React.Children.map(element.props.children, wrapChild)
+      : element.props.children;
 
-    // Wrap the element itself in Reveal
+    const cloned = cloneElement(element, {
+      ...element.props,
+      children: newChildren,
+    });
+
     return <Reveal>{cloned}</Reveal>;
   };
 
