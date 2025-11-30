@@ -47,33 +47,33 @@ export default function GallerySection() {
   const router = useRouter();
 
   return (
-    <div className="flex w-full h-full flex-col gap-20 bg-[#f3e4f0] py-12 sm:py-16 md:py-20">
+    <div className="flex w-full h-full flex-col gap-10 md:gap-20 bg-[#f3e4f0] py-12 sm:py-16 md:py-20">
       
       <div className="flex flex-col gap-10">
-        {/* Title */}
-      <div className="text-center">
-        <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-museo text-[#5c0d67]">
-          Featured Projects
-        </h2>
-      </div>
+          {/* Title */}
+        <div className="text-center">
+          <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-museo text-[#5c0d67]">
+            Featured Projects
+          </h2>
+        </div>
 
-      {/* Category Buttons */}
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActive(cat)}
-            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-lg sm:text-xl font-medium transition-all
-              ${
-                active === cat
-                  ? "bg-[#5c0d67] text-[#f3e4f0]"
-                  : "bg-[#e3cdda] text-[#5c0d67] hover:bg-[#d9c1cf]"
-              }`}
-          >
-            {cat.charAt(0).toUpperCase() + cat.slice(1)}
-          </button>
-        ))}
-      </div>
+        {/* Category Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActive(cat)}
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-lg sm:text-xl font-medium transition-all
+                ${
+                  active === cat
+                    ? "bg-[#5c0d67] text-[#f3e4f0]"
+                    : "bg-[#e3cdda] text-[#5c0d67] hover:bg-[#d9c1cf]"
+                }`}
+            >
+              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+            </button>
+          ))}
+        </div>
       </div>
       
 

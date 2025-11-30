@@ -92,36 +92,40 @@ export default function ProjectsPage() {
     active === "all" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <main className="w-screen min-h-screen bg-[#f3e4f0] pt-32 md:pt-38 flex flex-col gap-16">
+    <main className="w-screen min-h-screen bg-[#f3e4f0] pt-28 md:pt-32 flex flex-col gap-16">
       <Header/>
-      {/* ------------------ TITLE ------------------ */}
-      <section className="text-center">
-        <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-museo text-[#5c0d67]">
-          Our Projects
-        </h1>
-        <p className="mt-4 text-lg sm:text-xl font-medium text-[#5c0d67]/80 font-erbar">
-          Explore our collection of branding, graphics, and logo projects.
-        </p>
-      </section>
+      <div className="flex flex-col gap-5 md:gap-10">
+        {/* ------------------ TITLE ------------------ */}
+        <section className="text-center">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-museo text-[#5c0d67]">
+            Our Projects
+          </h1>
+          <p className="mt-4 text-lg sm:text-xl font-medium text-[#5c0d67]/80 font-erbar">
+            Explore our collection of branding, graphics, and logo projects.
+          </p>
+        </section>
 
-      {/* ------------------ CATEGORIES ------------------ */}
-      <section className="flex flex-wrap justify-center gap-4 sm:gap-6">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActive(cat)}
-            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-lg sm:text-xl font-erbar font-medium transition-all
-              ${
-                active === cat
-                  ? "bg-[#5c0d67] text-[#f3e4f0] shadow-lg"
-                  : "bg-[#e3cdda] text-[#5c0d67] hover:bg-[#d9c1cf]"
-              }
-            `}
-          >
-            {cat.charAt(0).toUpperCase() + cat.slice(1)}
-          </button>
-        ))}
-      </section>
+        {/* ------------------ CATEGORIES ------------------ */}
+        <section className="flex flex-wrap justify-center gap-4 sm:gap-6">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActive(cat)}
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-lg sm:text-xl font-erbar font-medium transition-all
+                ${
+                  active === cat
+                    ? "bg-[#5c0d67] text-[#f3e4f0] shadow-lg"
+                    : "bg-[#e3cdda] text-[#5c0d67] hover:bg-[#d9c1cf]"
+                }
+              `}
+            >
+              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+            </button>
+          ))}
+        </section>
+      </div>
+      
+
 
       {/* ------------------ IMAGE GRID (MASONRY EFFECT) ------------------ */}
       <section className="columns-2 sm:columns-2 lg:columns-3 gap-4 px-4 sm:px-8 md:px-12">
