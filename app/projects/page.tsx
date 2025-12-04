@@ -97,7 +97,7 @@ export default function ProjectsPage() {
       <div className="flex flex-col gap-5 md:gap-10">
         {/* ------------------ TITLE ------------------ */}
         <section className="text-center">
-          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-museo text-[#5c0d67]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-museo text-[#5c0d67]">
             Our Projects
           </h1>
           <p className="mt-4 text-lg sm:text-xl font-medium text-[#5c0d67]/80 font-erbar">

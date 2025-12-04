@@ -2,8 +2,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        erbar: ["var(--font-erbar)"],
-        museo: ["var(--font-museo)"],
+        leon: ["var(--font-leon)"],
+        alilato: ["var(--font-alilato)"],
       },
     },
   },
